@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function CreateEmployee() {
-
+const url = import.meta.env.VITE_BACKEND_URL;
+console.log("url---", url);
     const [name,setName]=useState()
 const [email,setEmail]=useState()
 const [title,setTitle]=useState()
@@ -22,7 +23,7 @@ const AllData = async (e) => {
   };
 
   try {
-    const response = await fetch("http://localhost:5000/api/v1/Add", {
+    const response = await fetch(`${url}/v1/Add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

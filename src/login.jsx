@@ -11,8 +11,8 @@ const Login = () => {
     
   });
   const [loading, setLoading] = useState(false);
-const url = process.env.BACKEND_URL
-console.log("url---",url)
+const url = import.meta.env.VITE_BACKEND_URL;
+console.log("url---", url);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -23,7 +23,7 @@ console.log("url---",url)
    
 
     try {
-      const response = await fetch("http://localhost:5000/api/v1/login", {
+      const response = await fetch(`${url}/v1/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

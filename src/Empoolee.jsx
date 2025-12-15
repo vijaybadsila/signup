@@ -3,11 +3,13 @@ import Add from "./Add";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 export default function Employees() {
+  const url = import.meta.env.VITE_BACKEND_URL;
+console.log("url---", url);
       const navigate = useNavigate();
         const [data, setData] = useState([]);
  const getdata = async () => {
   try {
-    const response = await fetch("http://localhost:5000/api/v1/");
+    const response = await fetch(`${url}/v1/`);
     
     // Convert response to JSON
     const result = await response.json();
