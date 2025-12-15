@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function CreateEmployee() {
 const url = import.meta.env.VITE_BACKEND_URL;
-console.log("url---", url);
+
     const [name,setName]=useState()
 const [email,setEmail]=useState()
 const [title,setTitle]=useState()
